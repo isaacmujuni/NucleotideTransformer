@@ -54,7 +54,7 @@ def plant_motif(seq: str, motif: str, rng: random.Random, copies: int = 3) -> st
         chars[pos : pos + len(motif)] = list(motif)
     return "".join(chars)
 
-def generate_dna(length: int, rng: random.Random) -> str:
+
     
 
 
