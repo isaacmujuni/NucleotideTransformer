@@ -60,4 +60,4 @@ def generate_dna(length: int, rng: random.Random) -> str:
 
 def generate_plant_dna(length: int, rng: random.Random) -> str:
     seq = random_dna(length, rng)
-    for motif in MOTIFS.values():
+    
