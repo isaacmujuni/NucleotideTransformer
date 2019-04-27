@@ -55,7 +55,7 @@ def plant_motif(seq: str, motif: str, rng: random.Random, copies: int = 3) -> st
     return "".join(chars)
 
 def generate_dna(length: int, rng: random.Random) -> str:
-    return random_dna(length, rng)
+    
 
 
 
