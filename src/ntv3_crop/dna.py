@@ -58,6 +58,5 @@ def generate_dna(length: int, rng: random.Random) -> str:
     return random_dna(length, rng)
 
 
-def generate_plant_dna(length: int, rng: random.Random) -> str:
-    seq = random_dna(length, rng)
+
     
