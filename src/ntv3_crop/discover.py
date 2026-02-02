@@ -43,7 +43,7 @@ def score_sequences(
             padding=True,
             truncation=True,
             max_length=seq_len,
-            pad_to_multiple_of=126,
+            pad_to_multiple_of=128,
             return_tensors="pt",
         )
         encoded = {k: v.to(device) for k, v in encoded.items()}
