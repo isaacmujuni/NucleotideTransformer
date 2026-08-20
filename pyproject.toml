@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ntv3-crop"
+version = "0.1.0"
+description = "Fine-tune NTv3 to score crop genes for stress and disease resistance."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.2.0",
+  "transformers>=4.55.0",
+  "accelerate>=0.33.0",
+  "peft>=0.12.0",
+  "datasets>=2.20.0",
+  "pyyaml>=6.0",
+  "pandas>=2.0",
+  "numpy>=1.26",
+  "scikit-learn>=1.4",
+  "tqdm>=4.66",
+  "requests>=2.32",
+  "biopython>=1.83",
+]
+
+[project.scripts]
+ntv3-train = "ntv3_crop.train:main"
+ntv3-discover = "ntv3_crop.discover:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

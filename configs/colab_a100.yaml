@@ -1,0 +1,37 @@
+# Google Colab A100 (40 GB). Use this for NTv3-650M.
+
+model_id: InstaDeepAI/NTv3_650M_pre
+seq_len: 4096
+batch_size: 1
+grad_accum: 16
+epochs: 3
+lr: 5.0e-5
+weight_decay: 0.01
+warmup_ratio: 0.06
+max_grad_norm: 1.0
+use_lora: true
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+freeze_backbone: false
+fp16: false
+bf16: true
+num_workers: 2
+
+labels:
+  - drought
+  - salt
+  - heat
+  - cold
+  - flooding
+  - pathogen
+  - insect
+
+train_csv: data/processed/train.csv
+val_csv: data/processed/val.csv
+output_dir: outputs/colab_a100
+seed: 42
+eval_steps: 100
+save_steps: 100
+logging_steps: 10
+max_steps: -1

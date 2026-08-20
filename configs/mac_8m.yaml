@@ -1,0 +1,35 @@
+# Local smoke-test config for Apple Silicon (8 GB).
+# This will not discover real crop genes; it only proves the training loop.
+
+model_id: InstaDeepAI/NTv3_8M_pre
+seq_len: 1024
+batch_size: 1
+grad_accum: 8
+epochs: 3
+lr: 2.0e-4
+weight_decay: 0.01
+warmup_ratio: 0.06
+max_grad_norm: 1.0
+use_lora: false
+freeze_backbone: true
+fp16: false
+bf16: false
+num_workers: 0
+
+labels:
+  - drought
+  - salt
+  - heat
+  - cold
+  - flooding
+  - pathogen
+  - insect
+
+train_csv: data/sample/train.csv
+val_csv: data/sample/val.csv
+output_dir: outputs/mac_8m
+seed: 42
+eval_steps: 20
+save_steps: 20
+logging_steps: 5
+max_steps: 60

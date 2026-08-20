@@ -1,0 +1,37 @@
+# Development training on a 16–24 GB GPU (T4, L4, RTX 4090).
+
+model_id: InstaDeepAI/NTv3_100M_pre
+seq_len: 4096
+batch_size: 2
+grad_accum: 8
+epochs: 4
+lr: 1.0e-4
+weight_decay: 0.01
+warmup_ratio: 0.06
+max_grad_norm: 1.0
+use_lora: true
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+freeze_backbone: false
+fp16: false
+bf16: true
+num_workers: 4
+
+labels:
+  - drought
+  - salt
+  - heat
+  - cold
+  - flooding
+  - pathogen
+  - insect
+
+train_csv: data/processed/train.csv
+val_csv: data/processed/val.csv
+output_dir: outputs/gpu_100m
+seed: 42
+eval_steps: 200
+save_steps: 200
+logging_steps: 20
+max_steps: -1

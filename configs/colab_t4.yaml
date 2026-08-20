@@ -1,0 +1,37 @@
+# Google Colab T4 (16 GB). fp16, not bf16 — T4 has no native bfloat16.
+
+model_id: InstaDeepAI/NTv3_100M_pre
+seq_len: 2048
+batch_size: 1
+grad_accum: 16
+epochs: 3
+lr: 1.0e-4
+weight_decay: 0.01
+warmup_ratio: 0.06
+max_grad_norm: 1.0
+use_lora: true
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+freeze_backbone: false
+fp16: true
+bf16: false
+num_workers: 2
+
+labels:
+  - drought
+  - salt
+  - heat
+  - cold
+  - flooding
+  - pathogen
+  - insect
+
+train_csv: data/sample/train.csv
+val_csv: data/sample/val.csv
+output_dir: outputs/colab_t4
+seed: 42
+eval_steps: 50
+save_steps: 50
+logging_steps: 10
+max_steps: -1

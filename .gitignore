@@ -1,0 +1,30 @@
+.venv/
+.venv*/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.ipynb_checkpoints/
+.DS_Store
+
+# Training artifacts
+outputs/
+wandb/
+runs/
+*.pt
+*.bin
+*.safetensors
+*.ckpt
+
+# Data (keep sample)
+data/raw/
+data/processed/
+!data/sample/
+!data/sample/**
+
+# Secrets / local env
+.env
+.hf_token
+huggingface_token.txt
